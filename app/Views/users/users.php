@@ -31,7 +31,7 @@
                                 <td><?= $user->username; ?></td>
                                 <td><?= $user->role; ?></td>
                                 <td>
-                                    <a href="" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= base_url('user/detail/' . $user->userid); ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
                                     <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>

@@ -33,14 +33,16 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->group('/kependudukan', ['filter' => 'role:operator, administrator'], function ($routes) {
-    $routes->get('desa', 'Kependudukan::desa');
-    $routes->get('wna', 'Kependudukan::wna');
+$routes->group('/', ['filter' => 'role:operator, administrator'], function ($routes) {
+    $routes->get('kependudukan/desa', 'Kependudukan::desa');
+    $routes->get('kependudukan/wna', 'Kependudukan::wna');
 });
 
-$routes->group('/user', ['filter' => 'role:administrator'], function ($routes) {
-    $routes->get('list', 'User::list');
-    $routes->get('permission', 'User::permission');
+$routes->group('/', ['filter' => 'role:administrator'], function ($routes) {
+    $routes->get('user/users', 'User::users');
+    $routes->get('user/detail/( :num)', 'User::detail/$1');
+    $routes->get('user/delete/( :num)', 'User::delete/$1');
+    $routes->get('user/permission', 'User::permission');
 });
 
 
