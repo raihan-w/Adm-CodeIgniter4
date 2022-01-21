@@ -4,10 +4,12 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <!-- DataTales Example -->
+    <?= view('Myth\Auth\Views\_message_block') ?>
+
+    <!-- DataTable -->
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">User List</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Daftar User</h6>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#importModal">
                 <i class="fas fa-plus fa-sm text-white-50"></i>
                 Tambah
@@ -32,7 +34,7 @@
                                 <td><?= $user->role; ?></td>
                                 <td>
                                     <a href="<?= base_url('user/detail/' . $user->userid); ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
-                                    <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="<?= base_url('user/delete/' . $user->userid); ?>" class="btn btn-danger" onclick="return confirm('Are you sure ?')"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

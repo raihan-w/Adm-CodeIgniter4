@@ -102,13 +102,13 @@
         </div>
         <!-- Nav Item - My Profile -->
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('user/users'); ?>">
+            <a class="nav-link" href="<?= base_url('user'); ?>">
                 <i class="fas fa-users"></i>
                 <span>Users</span></a>
         </li>
         <!-- Nav Item - Permission  -->
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('user/permission'); ?>">
+            <a class="nav-link" href="<?= base_url('permission'); ?>">
                 <i class="fas fa-user-cog"></i>
                 <span>Permission</span></a>
         </li>
