@@ -41,7 +41,7 @@
         <!-- Nav Item - WNA -->
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('kependudukan/wna'); ?>">
-                <i class="fas fa-table"></i>
+                <i class="fas fa-id-card"></i>
                 <span>Warga Negara Asing</span></a>
         </li>
     <?php endif; ?>

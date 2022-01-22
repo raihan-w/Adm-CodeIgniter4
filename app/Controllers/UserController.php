@@ -11,8 +11,8 @@ class UserController extends BaseController
 
     public function __construct()
     {
-        $this->db               = \config\Database::connect();
-        $this->getUsers          = $this->db->table('users');
+        $this->db           = \config\Database::connect();
+        $this->getUsers     = $this->db->table('users');
     }
 
     public function users()
@@ -28,7 +28,7 @@ class UserController extends BaseController
     
     public function detail($id = 0)
     {
-        $this->getUsers->Select('users.id as userid, username, email, user_img, name as role');
+        $this->getUsers->Select(' firstname, lastname, username, email, user_img, name as role');
         $this->getUsers->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
         $this->getUsers->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
         $this->getUsers->where('users.id', $id);
@@ -37,10 +37,10 @@ class UserController extends BaseController
 
         if (empty($data['user']))
         {
-            return redirect()->to('user/users');
+            return redirect()->back();
         }
 
-        return view('users/detail', $data);
+        return view('user/detail', $data);
     }
 
     public function delete($id)

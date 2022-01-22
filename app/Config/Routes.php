@@ -40,8 +40,8 @@ $routes->group('', ['filter' => 'role:operator, administrator'], function ($rout
 
 $routes->group('', ['filter' => 'role:administrator'], function ($routes) {
     $routes->get('user', 'UserController::users');
+    $routes->delete('user/(:num)', 'UserController::delete/$1');
     $routes->get('user/detail/(:any)', 'UserController::detail/$1');
-    $routes->get('user/delete/(:num)', 'UserController::delete/$1');
 
     $routes->get('permission', 'PermissionController::index');
 });
