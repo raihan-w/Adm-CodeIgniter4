@@ -4,12 +4,12 @@ namespace App\Controllers;
 
 class Kependudukan extends BaseController
 {
-    public function desa()
+    public function lokal()
     {
-        return view('penduduk/warga_desa');
+        return view('penduduk/lokal');
     }
-    public function wna()
+    public function asing()
     {
-        return view('penduduk/warga_asing');
+        return view('penduduk/asing');
     }
 }

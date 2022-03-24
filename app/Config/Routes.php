@@ -34,8 +34,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 
 $routes->group('', ['filter' => 'role:operator, administrator'], function ($routes) {
-    $routes->get('kependudukan/desa', 'Kependudukan::desa');
-    $routes->get('kependudukan/wna', 'Kependudukan::wna');
+    $routes->get('kependudukan/lokal', 'Kependudukan::lokal');
+    $routes->get('kependudukan/asing', 'Kependudukan::asing');
 });
 
 $routes->group('', ['filter' => 'role:administrator'], function ($routes) {

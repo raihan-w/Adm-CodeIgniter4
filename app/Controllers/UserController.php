@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Database\Query;
 use Myth\Auth\Models\UserModel;
+use PhpParser\Builder\Function_;
 
 class UserController extends BaseController
 {
@@ -28,7 +29,7 @@ class UserController extends BaseController
     
     public function detail($id = 0)
     {
-        $this->getUsers->Select(' firstname, lastname, username, email, user_img, name as role');
+        $this->getUsers->Select(' firstname, lastname, username, email, user_img, name as role, created_at');
         $this->getUsers->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
         $this->getUsers->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
         $this->getUsers->where('users.id', $id);
@@ -48,4 +49,7 @@ class UserController extends BaseController
         $this->getUsers->where('id', $id)->delete();
         return redirect()->back()->with('message', 'Data Deleted Successfully');
     }
+
+    public Function changePassword($id = 0)
+    {}
 }

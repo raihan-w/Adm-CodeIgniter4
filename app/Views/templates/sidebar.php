@@ -3,9 +3,9 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-            <img src="<?= base_url(); ?>/img/logo desa.png" alt="logo" style="width: 50px;">
+            <img src="<?= base_url(); ?>/img/logo desa.png" alt="logo" style="width: 40px;">
         </div>
-        <div class="sidebar-brand-text mx-3">Sistem Administrasi</div>
+        <div class="sidebar-brand-text mx-3">Sistem Desa</div>
     </a>
 
     <!-- Divider -->
@@ -29,20 +29,20 @@
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-address-book"></i>
-            <span>Kependudukan</span></a>
+            <span>Data Penduduk</span></a>
     </li>
     <?php if (has_permission('manage_data')) : ?>
         <!-- Nav Item - Domisili -->
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('kependudukan/desa'); ?>">
+            <a class="nav-link" href="<?= base_url('kependudukan/lokal'); ?>">
                 <i class="fas fa-id-card"></i>
-                <span>Warga Domisili</span></a>
+                <span>Data Warga</span></a>
         </li>
         <!-- Nav Item - WNA -->
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('kependudukan/wna'); ?>">
+            <a class="nav-link" href="<?= base_url('kependudukan/asing'); ?>">
                 <i class="fas fa-id-card"></i>
-                <span>Warga Negara Asing</span></a>
+                <span>Data Warga Negara Asing</span></a>
         </li>
     <?php endif; ?>
 

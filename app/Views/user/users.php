@@ -33,11 +33,13 @@
                                 <td><?= $user->username; ?></td>
                                 <td><?= $user->role; ?></td>
                                 <td>
-                                    <a href="<?= base_url('user/detail/' . $user->userid); ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= base_url('user/detail/' . $user->userid); ?>" class="btn btn-info btn-circle">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
                                     <form action="/user/<?= $user->userid; ?>" method="POST" class="d-inline">
                                         <?= csrf_field(); ?>
                                         <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure ?')">
+                                        <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Are you sure ?')">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </form>
